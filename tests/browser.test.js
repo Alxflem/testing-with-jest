@@ -37,3 +37,13 @@ describe('Clicking "Pusha till stacken"', () => {
     await alert.accept();
   });
 });
+
+test("The stack should contain the pushed value", async () => {
+  let push = await driver.findElement(By.id("push"));
+  await push.click();
+  let alert = await driver.switchTo().alert();
+  await alert.sendKeys("Bananer");
+  await alert.accept();
+  let stack = await driver.findElement(By.id("top_of_stack")).getText();
+  expect(stack).toEqual("Gurkor");
+});
