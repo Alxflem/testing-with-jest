@@ -19,11 +19,17 @@ test("peek on stack with two or more elements returns the top element", () => {
 });
 
 test("same amount of push and pops should be doable", () => {
+  // Poppar alla tidigare värden
+  stack.pop();
+  stack.pop();
+  stack.pop();
+  stack.pop();
+
   stack.push(1);
   stack.push(2);
   stack.push(3);
   expect(stack.pop()).toBe(3);
   expect(stack.pop()).toBe(2);
-  expect(stack.pop()).toBe(10);
+  expect(stack.pop()).toBe(1);
   expect(stack.peek()).toBeUndefined();
 });

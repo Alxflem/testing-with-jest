@@ -45,5 +45,5 @@ test("The stack should contain the pushed value", async () => {
   await alert.sendKeys("Bananer");
   await alert.accept();
   let stack = await driver.findElement(By.id("top_of_stack")).getText();
-  expect(stack).toEqual("Gurkor");
+  expect(stack).toEqual("Bananer");
 });
